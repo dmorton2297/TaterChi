@@ -7,3 +7,57 @@
   background-color: #efefef;
   text-align: center;
 }
+.jumbotron {
+	background-color: white;
+}
+
+.heading {
+  margin-left: 30px;
+    padding: 5px;
+
+}
+
+h1 { color: #F90B6D;  font-size: 34px; font-weight: 300; line-height: 40px; margin: 0 0 16px; }
+
+
+h2 { color: #F90B6D;  font-size: 24px; font-weight: 300; line-height: 32px; margin: 0 0 14px; }
+
+
+p { color: #222;   
+  font-size: 15px; 
+  font-weight: 400; 
+  line-height: 24px; 
+  margin: 0 0 14px; 
+  float: left;
+}
+
+body {
+  background-color: #f1f1f1;
+}
+
+hr {
+  border-color: black;
+  width: 100%;
+}
+
+
+#thetachilogo {
+  margin-left: 5px;
+  width: 120px;
+}
+
+#bannerimage {
+  width: 100%;
+  background-image: url(https://i.imgur.com/nq6lY8A.jpg);
+  height: 405px;
+  background-color: grey;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#history {
+  margin-left: 50px;
+  margin-right: 50px;
+  color: white;
+}
+

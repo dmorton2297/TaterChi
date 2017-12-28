@@ -8,13 +8,16 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>GroceryPal</title>
+    <title>Theta Chi Alpha Delta</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
 
     @yield('head')
 
@@ -35,20 +38,15 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        GroceryPal
-                    </a>
+                   <a href="/" style="margin-right:5px;"><img src="https://i.imgur.com/lGHdIrM.png" id="thetachilogo"></img></a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
-                        @guest 
-                        @else
-                           <a href="{{ route('addfood') }}"><button class="btn btn-default" style="margin-top: 7px; margin-left: 5px;">Add Food</button></a>
-                           <a href="{{ route('map') }}"><button class="btn btn-default" style="margin-top: 7px; margin-left: 5px;">Find Restaurant</button></a>
-                           <a href="{{ route('about') }}"><button class="btn btn-default" style="margin-top: 7px; margin-left: 5px;">About</button></a>
-                        @endguest
+                           <a href="{{ route('welcome') }}"><button class="btn btn-default" style="margin-top: 7px; margin-left: 5px;">About the Chapter</button></a>
+                           <a href="{{ route('welcome')}}"><button class="btn btn-default" style="margin-top: 7px; margin-left: 5px;">Newsletters</button></a>
+                           <a href="{{  route('welcome')}}"><button class="btn btn-default" style="margin-top: 7px; margin-left: 5px;">Members</button></a>
                         &nbsp;
                     </ul>
 
@@ -56,8 +54,7 @@
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         @guest
-                            <li><a href="{{ route('login') }}">Login</a></li>
-                            <li><a href="{{ route('register') }}">Register</a></li>
+                            <li><a href="{{ route('welcome') }}">Contact Us</a></li>
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
@@ -90,6 +87,10 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
 
-   <div class="footer"><strong>CS252 Systems Programming Fall 2017</strong></div>
+   <div class="footer">
+       <a href="#" class="fa fa-facebook"></a>
+        <a href="#" class="fa fa-twitter"></a>
+        <a href="#" class="fa fa-instagram"></a>
+   </div>
 </body>
 </html>
