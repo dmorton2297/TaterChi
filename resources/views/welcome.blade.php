@@ -3,9 +3,8 @@
 @section('content')
 
 <div id="bannerimage"></div>
-
-<div id="history">
-	<h1 class="heading">Theta Chi Alpha Delta</h1>
+<h1 class="heading">Theta Chi Alpha Delta</h1>
+<div id="textblock">
 	<div class="row">
 		<div class="col-md-9">
 			<p>The Alpha Delta chapter of Theta Chi is located in the Tower Acres at Purdue University.<br><br>  
@@ -17,15 +16,16 @@
 			 <img src="https://i.imgur.com/KzEKU7h.png"></img>
 		</div>
 	</div>
+</div>
 
-	<hr>
+<hr>
 
+<h1 class="heading">Latest News</h1>
+<div id="textblock">
 	<div>
-			<h1 class="heading">Latest News</h1>
 		<p style="margin-bottom: 100px;">Homecoming is this Saturday, September 23rd with a 4pm kickoff as the 2-1 Boilermakers take on the Michigan Wolverines.
 		The House Chef, Karen, is preparing both a brunch and lunch (MENU).
 		If you are an Alum and would like to tailgate in the chapter house parking lot, check in with Alumni Relations Chairman, Chaz Osborn, with this link. </p>
 	</div>
-
 </div>
 @stop

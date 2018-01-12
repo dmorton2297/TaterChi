@@ -10,4 +10,26 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+
+    /**
+    *
+    * This function returns the about page
+    *
+    */
+     public function admin() {
+        //$this->middleware('auth');
+        return view('home');
+     }
 }

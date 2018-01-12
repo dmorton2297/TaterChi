@@ -44,7 +44,7 @@
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
-                           <a href="{{ route('welcome') }}"><button class="btn btn-default" style="margin-top: 7px; margin-left: 5px;">About the Chapter</button></a>
+                           <a href="{{ route('about') }}"><button class="btn btn-default" style="margin-top: 7px; margin-left: 5px;">About the Chapter</button></a>
                            <a href="{{ route('welcome')}}"><button class="btn btn-default" style="margin-top: 7px; margin-left: 5px;">Newsletters</button></a>
                            <a href="{{  route('welcome')}}"><button class="btn btn-default" style="margin-top: 7px; margin-left: 5px;">Members</button></a>
                         &nbsp;
