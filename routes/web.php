@@ -24,3 +24,16 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/about', 'HomeController@about')->name('about');
 
 Route::get('/admin', 'Controller@admin')->name('admin');
+
+Route::get('/mm', 'Controller@manageMembers')->name('manageMembers');
+
+Route::get('/addmember', 
+  ['as' => 'addmember', 'uses' => 'Controller@addMember']);
+
+Route::post('/storemember', 
+  ['as' => 'storemember', 'uses' => 'HomeController@storeMember']);
+
+Route::get('/deleteMember/{id}', ['uses' => 'Controller@deleteMember']);
+Route::get('/updateMember/{id}', ['uses' => 'Controller@updateMember']);
+
+

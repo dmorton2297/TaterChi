@@ -7,6 +7,12 @@ use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
+// include Member model
+use App\Member;
+
+// include Request stuff
+use Illuminate\Http\Request;
+
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
@@ -29,7 +35,57 @@ class Controller extends BaseController
     *
     */
      public function admin() {
-        //$this->middleware('auth');
-        return view('home');
+        $this->middleware('auth');
+        return view('admin');
      }
+
+     /**
+     *
+     * This function will load the manage members page
+     *
+     */
+
+     public function manageMembers() {
+        $members = Member::all();
+        return view('managemembers', ['members' => $members]);
+     }
+
+     public function addMember() {
+        return view("addmember");
+     }
+
+     public function storeMember(Request $request) {
+        $member = new Member();
+        $member -> firstname = $request->input('firstname');
+        $member -> lastname = $request->input('lastname');
+        $member -> email = $request->input('email');
+        $member -> info = $request->input('info');
+        $member -> grad_date= $request->input('grad_date');
+
+        $member -> save();
+
+       return redirect()->route('manageMembers');
+
+        // do things for storing a member here
+     }
+
+     public function deleteMember($id) {
+        $todelete = Member::find($id);
+        if ($todelete) {
+            $todelete -> delete();
+        }
+
+        return redirect() -> route('manageMembers');
+     }
+
+
+
+
+
+
+
+
+
+
+
 }

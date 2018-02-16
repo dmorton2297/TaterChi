@@ -1,0 +1,6 @@
+1. Add laravel collective html package
+check composer.json for "laravelcollective/html": "^5.4.0"
+composer require "laravelcollective/html":"^5.4.0"
+
+
+
