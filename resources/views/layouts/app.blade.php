@@ -46,7 +46,7 @@
                     <ul class="nav navbar-nav">
                            <a href="{{ route('about') }}"><button class="btn btn-default" style="margin-top: 7px; margin-left: 5px;">About the Chapter</button></a>
                            <a href="{{ route('welcome')}}"><button class="btn btn-default" style="margin-top: 7px; margin-left: 5px;">Newsletters</button></a>
-                           <a href="{{  route('welcome')}}"><button class="btn btn-default" style="margin-top: 7px; margin-left: 5px;">Members</button></a>
+                           <a href="{{  route('members')}}"><button class="btn btn-default" style="margin-top: 7px; margin-left: 5px;">Members</button></a>
                         &nbsp;
                     </ul>
 

@@ -8,12 +8,20 @@
         </script>
 
         <script type="text/javascript">
-            function editMember(id) {
-                window.location = '/editMember/' + item;
+            function updateMember(id) {
+                window.location = '/updateMember/' + id;
             }
         </script>
 
-	<h1>Manage Members</h1>
+	<div class="row">
+		<div class="col-md-5">
+			<h1>Manage Members</h1>
+		</div>
+		<div class="col-med-7">
+			<h4 style="float:right; padding-right: 50px; "><a href="/admin">Admin Dashboard</a> > Manage Members</h4>
+		</div>
+	</div>
+
 
 	<div style="float: right; padding-right: 30px; padding-bottom: 20px;">
 		<button class="btn btn-default" onclick="window.location='addmember'">Add Members</button>
@@ -35,7 +43,7 @@
             
 			?>
        		 <?php
-            	$function2 = 'editMember(\''.$member->id.'\')';
+            	$function2 = 'updateMember(\''.$member->id.'\')';
       		  ?>
 
 				<td>{!! $member->id !!}</td>

@@ -21,6 +21,8 @@ Route::get('/register', 'Controller@admin')->name('admin');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/members', 'Controller@members')->name('members');
+
 Route::get('/about', 'HomeController@about')->name('about');
 
 Route::get('/admin', 'Controller@admin')->name('admin');
@@ -35,5 +37,7 @@ Route::post('/storemember',
 
 Route::get('/deleteMember/{id}', ['uses' => 'Controller@deleteMember']);
 Route::get('/updateMember/{id}', ['uses' => 'Controller@updateMember']);
+Route::post('/savememberupdate', 
+  ['as' => 'savememberupdate', 'uses' => 'HomeController@saveMemberUpdate']);
 
 

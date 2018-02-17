@@ -78,6 +78,37 @@ class Controller extends BaseController
         return redirect() -> route('manageMembers');
      }
 
+     public function updateMember($id) {
+        $toUpdate = Member::find($id);
+        return view('updateMember', ['member' => $toUpdate]);
+     }
+
+     public function saveMemberUpdate(Request $request) {
+        $member = Member::find($request->input('id'));
+        //check to see if the member was found
+
+        if ($member) {
+            $member -> firstname = $request->input('firstname');
+            $member -> lastname = $request->input('lastname');
+            $member -> email = $request->input('email');
+            $member -> info = $request->input('info');
+            $member -> grad_date= $request->input('grad_date');
+             $member -> save();
+
+        } else {
+            return "fuck";
+        }
+
+
+        return redirect()->route('manageMembers');
+     }
+
+     public function members() {
+        $members = Member::all();
+
+        return view('members', ['members' => $members]);
+     }
+
 
 
 

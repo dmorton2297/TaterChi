@@ -17,7 +17,7 @@ class CreateMembersTable extends Migration
             $table->increments('id');
             $table->string('firstname');
             $table->string('lastname');
-            $table->string('info');
+            $table->longText('info');
             $table->string('email');
             $table->date('grad_date');
             $table->timestamps();
