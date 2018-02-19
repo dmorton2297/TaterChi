@@ -14,7 +14,7 @@
 					<td>Add, Delete and Update Active members</td>
 				</tr>
 				<tr>
-					<td><a href="#">Manage Alumni</a></td>
+					<td><a href="am">Manage Alumni</a></td>
 					<td>Add, Delete and Update Alumni</td>
 
 				</tr>

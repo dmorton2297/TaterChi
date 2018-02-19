@@ -179,6 +179,35 @@ class Controller extends BaseController
         return redirect()->route('manageAlumni');
      }
 
+     public function search($request, $table) {
+        $searchString = $request -> input('search_string');
+        echo $table;
+        if ($table == 'members') {
+        $members = Member::where('firstname', 'like', '%'.$searchString.'%')
+            ->orWhere('lastname', 'like', '%'.$searchString.'%')->get();
+
+            return view('admin.managemembers', ['members' => $members, 
+            'sortmessage' => 'Sort by Firstname',
+            'sortredirect' => 'mmf']);
+        } else {
+            $alumnis = Alumni::where('firstname', 'like', '%'.$searchString.'%')
+            ->orWhere('lastname', 'like', '%'.$searchString.'%')->get();
+
+            return view('admin.managealumni', ['alumni' => $alumnis, 
+            'sortmessage' => 'Sort by Firstname',
+            'sortredirect' => 'mmf']);
+        }
+     }
+
+     public function searcha(Request $request) {
+        return $this -> search($request, 'alumni');
+
+     }
+
+     public function searchm(Request $request) {
+        return $this -> search($request, 'members');
+     }
+
 
 
      

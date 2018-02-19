@@ -31,7 +31,16 @@
 	</div>
 
 	<div style="float: left; padding-left: 30px; padding-bottom: 20px;">
-		<button class="btn btn-default" onclick="window.location=sortredirect">{!! $sortmessage !!}</button>
+		<div class="row">
+			<div class="col-md-5">
+				<button class="btn btn-default" onclick="window.location=sortredirect">{!! $sortmessage !!}</button>
+			</div> 
+			<div class="col-md-7">
+				{!! Form::open(['route' => 'searchm', 'class' => 'form']) !!}
+				{!! Form::text('search_string', null, ['class' => 'form-control', 'placeholder' => 'search']) !!}
+			</div>
+		</div>
+
 	</div>
 
 

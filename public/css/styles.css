@@ -79,6 +79,14 @@ hr {
   margin-right: 50px;
 }
 
+#cancel-button {
+  padding-left: 30px;
+  padding-right: 30px;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
 blockquote{
   display:block;
   background: #fff;

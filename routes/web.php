@@ -49,7 +49,14 @@ Route::post('/storealumni',
 Route::get('/deleteAlumni/{id}', ['uses' => 'Controller@deleteAlumni']);
 Route::get('/updateAlumni/{id}', ['uses' => 'Controller@updateAlumni']);
 Route::post('/savealumniupdate', 
-  ['as' => 'savealumniupdate', 'uses' => 'HomeController@saveAlumniUpdate']);
+  ['as' => 'savealumniupdate', 'uses' => 'Controller@saveAlumniUpdate']);
+
+// route for search request (on management pages)
+Route::post('/searchm', ['as' => 'searchm', 
+	'uses' => 'Controller@searchm']);
+Route::post('/searcha', ['as' => 'searcha', 
+	'uses' => 'Controller@searcha']);
+
 
 
 

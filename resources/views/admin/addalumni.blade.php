@@ -28,6 +28,12 @@
 
 	<div class="form-group">
 		{!! Form::submit('Add Alumni', ['class' => 'btn btn-primary form-control']) !!}
+		<a id="cancel-button" href="/am" class="btn btn-danger">Cancel</a>
+
+	</div>
+
+	<div class="form-group">
+		<a id="cancel-button" href="/am" class="btn btn-danger">Cancel</a>
 	</div>
 
 @endsection
