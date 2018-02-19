@@ -45,9 +45,24 @@ class Controller extends BaseController
      *
      */
 
+     public function manageMembers_fs_sort() {
+    
+     }
+
      public function manageMembers() {
-        $members = Member::all();
-        return view('managemembers', ['members' => $members]);
+        $members = Member::orderBy('lastname')->get();
+
+        return view('managemembers', ['members' => $members, 
+            'sortmessage' => 'Sort by Firstname',
+            'sortredirect' => 'mmf']);
+     }
+
+     public function manageMembers_firstname() {
+        $members = Member::orderby('firstname')->get();
+
+        return view('managemembers', ['members' => $members, 
+            'sortmessage' => 'Sort by Lastname', 
+            'sortredirect' => 'mm']);
      }
 
      public function addMember() {
@@ -103,11 +118,7 @@ class Controller extends BaseController
         return redirect()->route('manageMembers');
      }
 
-     public function members() {
-        $members = Member::all();
-
-        return view('members', ['members' => $members]);
-     }
+     
 
 
 

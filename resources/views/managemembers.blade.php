@@ -2,6 +2,9 @@
 
 @section('content')
 	<script type="text/javascript">
+		var sortredirect = "<?php echo $sortredirect; ?>";
+	</script>
+	<script type="text/javascript">
             function deleteMember(id) {
                 window.location = '/deleteMember/' + id;
             }
@@ -26,6 +29,13 @@
 	<div style="float: right; padding-right: 30px; padding-bottom: 20px;">
 		<button class="btn btn-default" onclick="window.location='addmember'">Add Members</button>
 	</div>
+
+	<div style="float: left; padding-left: 30px; padding-bottom: 20px;">
+		<button class="btn btn-default" onclick="window.location=sortredirect">{!! $sortmessage !!}</button>
+	</div>
+
+
+	<p><span class="glyphicon glyphicon-add" style="padding-left: 100px;"></span></p>
 	<div id="table">
 		<table class="table">
 			<tr>

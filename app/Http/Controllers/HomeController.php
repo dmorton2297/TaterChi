@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Member;
 
 class HomeController extends Controller
 {
@@ -34,6 +35,12 @@ class HomeController extends Controller
     public function about() {
         return view('about');
     }
+
+    public function members() {
+        $members = Member::all();
+
+        return view('members', ['members' => $members]);
+     }
 
 
      

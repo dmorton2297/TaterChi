@@ -21,13 +21,14 @@ Route::get('/register', 'Controller@admin')->name('admin');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/members', 'Controller@members')->name('members');
+Route::get('/members', 'HomeController@members')->name('members');
 
 Route::get('/about', 'HomeController@about')->name('about');
 
 Route::get('/admin', 'Controller@admin')->name('admin');
 
 Route::get('/mm', 'Controller@manageMembers')->name('manageMembers');
+Route::get('/mmf', 'Controller@manageMembers_firstname')->name('manageMembers_firstname');
 
 Route::get('/addmember', 
   ['as' => 'addmember', 'uses' => 'Controller@addMember']);
