@@ -9,6 +9,7 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 // include Member model
 use App\Member;
+use App\Alumni;
 
 // include Request stuff
 use Illuminate\Http\Request;
@@ -36,23 +37,14 @@ class Controller extends BaseController
     */
      public function admin() {
         $this->middleware('auth');
-        return view('admin');
+        return view('admin.admin');
      }
 
-     /**
-     *
-     * This function will load the manage members page
-     *
-     */
-
-     public function manageMembers_fs_sort() {
-    
-     }
 
      public function manageMembers() {
         $members = Member::orderBy('lastname')->get();
 
-        return view('managemembers', ['members' => $members, 
+        return view('admin.managemembers', ['members' => $members, 
             'sortmessage' => 'Sort by Firstname',
             'sortredirect' => 'mmf']);
      }
@@ -60,13 +52,13 @@ class Controller extends BaseController
      public function manageMembers_firstname() {
         $members = Member::orderby('firstname')->get();
 
-        return view('managemembers', ['members' => $members, 
+        return view('admin.managemembers', ['members' => $members, 
             'sortmessage' => 'Sort by Lastname', 
             'sortredirect' => 'mm']);
      }
 
      public function addMember() {
-        return view("addmember");
+        return view("admin.addmember");
      }
 
      public function storeMember(Request $request) {
@@ -95,7 +87,7 @@ class Controller extends BaseController
 
      public function updateMember($id) {
         $toUpdate = Member::find($id);
-        return view('updateMember', ['member' => $toUpdate]);
+        return view('admin.updateMember', ['member' => $toUpdate]);
      }
 
      public function saveMemberUpdate(Request $request) {
@@ -117,6 +109,77 @@ class Controller extends BaseController
 
         return redirect()->route('manageMembers');
      }
+
+     // all alumni management functions follow
+     public function manageAlumni() {
+        $alumni = Alumni::orderBy('lastname') -> get();
+        return view('admin.managealumni', ['alumni' => $alumni, 
+            'sortmessage' => 'Sort by Firstname',
+            'sortredirect' => 'amf']);
+     }
+
+     public function manageAlumni_firstname() {
+        $alumni = Alumni::orderby('firstname')->get();
+
+        return view('admin.managealumni', ['alumni' => $alumni, 
+            'sortmessage' => 'Sort by Lastname', 
+            'sortredirect' => 'am']);
+     }
+
+      public function addAlumni() {
+        return view("admin.addalumni");
+     }
+
+     public function storeAlumni(Request $request) {
+        $alumni = new Alumni();
+        $alumni -> firstname = $request->input('firstname');
+        $alumni -> lastname = $request->input('lastname');
+        $alumni -> email = $request->input('email');
+        $alumni -> info = $request->input('info');
+        $alumni -> grad_year = $request->input('grad_year');
+
+        $alumni -> save();
+
+       return redirect()->route('manageAlumni');
+
+        // do things for storing a member here
+     }
+
+     public function deleteAlumni($id) {
+        $todelete = Alumni::find($id);
+        if ($todelete) {
+            $todelete -> delete();
+        }
+
+        return redirect() -> route('manageAlumni');
+     }
+
+     public function updateAlumni($id) {
+        $toUpdate = Alumni::find($id);
+        return view('admin.updateAlumni', ['alumni' => $toUpdate]);
+     }
+
+     public function saveAlumniUpdate(Request $request) {
+        $alumni = Alumni::find($request->input('id'));
+        //check to see if the alumni was found
+
+        if ($alumni) {
+            $alumni -> firstname = $request->input('firstname');
+            $alumni -> lastname = $request->input('lastname');
+            $alumni -> email = $request->input('email');
+            $alumni -> info = $request->input('info');
+            $alumni -> grad_year= $request->input('grad_year');
+            $alumni -> save();
+
+        } else {
+            return "something went wrong here";
+        }
+
+
+        return redirect()->route('manageAlumni');
+     }
+
+
 
      
 
