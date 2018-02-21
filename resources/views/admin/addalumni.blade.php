@@ -32,8 +32,5 @@
 
 	</div>
 
-	<div class="form-group">
-		<a id="cancel-button" href="/am" class="btn btn-danger">Cancel</a>
-	</div>
 
 @endsection

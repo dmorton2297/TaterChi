@@ -208,6 +208,31 @@ class Controller extends BaseController
         return $this -> search($request, 'members');
      }
 
+     public function filterAlumni() {
+        return view('admin.exportcsv');
+     }
+
+     public function runAlumniFilters(Request $request) {
+        $start_year = (int)($request -> input('start_year'));
+        $end_year = (int)($request -> input('end_year'));
+
+        // to check if invalid input, int val will be 0
+        if ($start_year == 0 || $end_year == 0) {
+            // This is a case where there was an error in input. 
+            // For now, do nothing and reutnr them to the form.
+
+             return redirect()->route('filterAlumni');
+        }
+
+        $alumni = Alumni::where('grad_year', '>=', $start_year)
+        ->where('grad_year', '<=', $end_year)
+        ->get();
+
+        return view('admin.showfilteredalumni', ['alumni' => $alumni]);
+
+
+     }
+
 
 
      

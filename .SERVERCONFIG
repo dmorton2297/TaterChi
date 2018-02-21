@@ -2,5 +2,13 @@
 check composer.json for "laravelcollective/html": "^5.4.0"
 composer require "laravelcollective/html":"^5.4.0"
 
+2. If you run into a MYSQL error on dev machine (2002) run commands
+
+sudo chown -R _mysql:mysql /usr/local/var/mysql
+
+sudo mysql.server start
+
+
+
 
 

@@ -57,6 +57,10 @@ Route::post('/searchm', ['as' => 'searchm',
 Route::post('/searcha', ['as' => 'searcha', 
 	'uses' => 'Controller@searcha']);
 
+// export routes
+Route::get('/filteralumni', 'Controller@filterAlumni')->name('filterAlumni');
+Route::post('/runalumniFilters', ['as' => 'runAlumniFilters', 'uses' => 'Controller@runAlumniFilters']);
+
 
 
 

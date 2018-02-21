@@ -16,6 +16,36 @@
             }
         </script>
 
+
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Other Actions</h4>
+      </div>
+      <div class="modal-body">
+      	<table>
+      		<tr>
+      			<td><p><a href="filteralumni">Filter and Export</a></p></td> 
+      		</tr>
+      		<tr>
+      			<td><p><a href="#">Send mass email</a></p></td>
+      		</tr>
+      	</table>
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
 	<div class="row">
 		<div class="col-md-5">
 			<h1>Manage Alumni</h1>
@@ -27,7 +57,14 @@
 
 
 	<div style="float: right; padding-right: 30px; padding-bottom: 20px;">
-		<button class="btn btn-default" onclick="window.location='addalumni'">Add Alumni</button>
+		<div class="row">
+			<div class="col-md-5">
+				<button class="btn btn-default" data-toggle="modal" data-target="#myModal">Other Actions</button>
+			</div>
+			<div class="col-md-5">
+				<button class="btn btn-default" onclick="window.location='addalumni'">Add Alumni</button>
+			</div>
+		</div>
 	</div>
 
 	<div style="float: left; padding-left: 30px; padding-bottom: 20px;">
