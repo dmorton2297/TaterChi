@@ -15,11 +15,15 @@
 		{!! Form::label('email', 'Email: ') !!}
 		{!! Form::text('email', null, ['class' => 'form-control']) !!}
 
-		{!! Form::label('info', 'Infomation: ') !!}
-		{!! Form::textarea('info', null, ['class' => 'form-control', 'rows' => 5]) !!}
+		{!! Form::label('industry', 'Industry: ') !!}
+		{!! Form::text('industry', null, ['class'=>'form-control']) !!}
 
 		{!! Form::label('grad_year', "Graduation year (YYYY):       ")!!}
 		{!! Form::text('grad_year', '2000') !!}
+
+		{!! Form::label('phone_number', 'Phone Number (XXX)XXX-XXX') !!}
+		{!! Form::text('phone_number', '(000)000-000') !!}
+
 
 	
 	</div>

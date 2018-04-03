@@ -135,8 +135,9 @@ class Controller extends BaseController
         $alumni -> firstname = $request->input('firstname');
         $alumni -> lastname = $request->input('lastname');
         $alumni -> email = $request->input('email');
-        $alumni -> info = $request->input('info');
+        $alumni -> industry = $request->input('industry');
         $alumni -> grad_year = $request->input('grad_year');
+        $alumni -> phone_number = $request -> input('phone_number');
 
         $alumni -> save();
 
@@ -167,8 +168,8 @@ class Controller extends BaseController
             $alumni -> firstname = $request->input('firstname');
             $alumni -> lastname = $request->input('lastname');
             $alumni -> email = $request->input('email');
-            $alumni -> info = $request->input('info');
             $alumni -> grad_year= $request->input('grad_year');
+            $alumni -> phone_number = $request->input('');
             $alumni -> save();
 
         } else {
@@ -209,7 +210,11 @@ class Controller extends BaseController
      }
 
      public function filterAlumni() {
-        return view('admin.exportcsv');
+        return view('admin.filterAlumni');
+     }
+
+     public function exportAlumni($alumni) {
+
      }
 
      public function runAlumniFilters(Request $request) {
@@ -223,12 +228,11 @@ class Controller extends BaseController
 
              return redirect()->route('filterAlumni');
         }
-
-        $alumni = Alumni::where('grad_year', '>=', $start_year)
-        ->where('grad_year', '<=', $end_year)
-        ->get();
-
-        return view('admin.showfilteredalumni', ['alumni' => $alumni]);
+         
+        $alumni = Alumni::where('grad_year', '<', $end_year) 
+            -> where('grad_year', '>', $start_year)->get();
+        $callback = $this ->exportAlumni($alumni);
+        return view('admin.showfilteredalumni', ['alumni' => $alumni, 'callbackcsv' => $callback]);
 
 
      }

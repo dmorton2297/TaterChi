@@ -17,9 +17,10 @@ class CreateAlumnisTable extends Migration
             $table->increments('id');
             $table->string('firstname');
             $table->string('lastname');
-            $table->longText('info');
             $table->string('email');
             $table->string('grad_year');
+            $table->string('industry');
+            $table->string('phone_number');
             $table->timestamps();
         });
     }

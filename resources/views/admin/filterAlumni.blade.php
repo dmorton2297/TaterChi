@@ -4,10 +4,10 @@
 
 	<div class="row">
 		<div class="col-md-5">
-			<h1>Alumni .CSV Export</h1>
+			<h1>Filter Alumni Database</h1>
 		</div>
 		<div class="col-med-7">
-			<h4 style="float:right; padding-right: 50px; "><a href="/admin">Admin Dashboard</a> > Alumni .CSV Export</h4>
+			<h4 style="float:right; padding-right: 50px; "><a href="/am">Manage Alumni</a> > Filter Alumni Database</h4>
 		</div>
 	</div>
 
@@ -21,11 +21,13 @@
 			{!! Form::label('end_year', 'End year: ', ['id' => 'form-group']) !!}
 			{!! Form::text('end_year', null, ['class' => 'form-control', 'placeholder' => '2020 (optional)']) !!}
 
-			<div class="form-group">
-				{!! Form::submit('Update Alumni', ['class' => 'btn btn-primary form-control']) !!}
+			<div style="margin-top: 30px;">
+				{!! Form::submit('Filter', ['class' => 'btn btn-primary form-control']) !!}
 				<a id="cancel-button" href="/am" class="btn btn-danger">Cancel</a>
 			</div>
 		</div>
+
+			
 	</div>
 
 @endsection
